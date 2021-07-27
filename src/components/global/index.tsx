@@ -1,0 +1,14 @@
+import {jsx} from "@emotion/react";
+import facepaint from "facepaint";
+
+export const breakpoints = [576, 768, 992, 1200];
+
+// facepaint allows for media queries in this format:
+// css={mq({color: ['green', 'gray', 'hotpink']})}
+
+export const mq = facepaint(
+  breakpoints.map(bp => `@media (min-width: ${bp}px)`),
+);
+
+export {Text, Heading} from "./Text";
+export {default as Box} from "./Box";
