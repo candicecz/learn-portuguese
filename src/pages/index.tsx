@@ -4,8 +4,13 @@ import Scoreboard from "src/components/Scoreboard";
 import PageLayout from "src/components/PageLayout";
 import GlobalStyles from "src/styles/GlobalStyles";
 import React, {useEffect, useState} from "react";
+import {ThemeProvider} from "@emotion/react";
+import {themeConfig, ThemeProps} from "src/styles/theme";
+import {useCustomTheme} from "src/components/hooks/useCustomTheme";
 
 export default function Home() {
+  const {theme}: {theme: ThemeProps} = useCustomTheme(themeConfig);
+
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
@@ -20,10 +25,12 @@ export default function Home() {
         <link rel="icon" href="/portugal.svg" />
       </Head>
       <GlobalStyles />
-      <PageLayout>
-        <Scoreboard />
-        <Main></Main>
-      </PageLayout>
+      <ThemeProvider theme={theme}>
+        <PageLayout>
+          <Scoreboard />
+          <Main></Main>
+        </PageLayout>
+      </ThemeProvider>
     </>
   );
 }
