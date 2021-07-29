@@ -13,7 +13,9 @@ const Button: React.FC<ButtonProps> = ({
   const theme = useTheme();
   return (
     <StyledButton theme={theme} isSelected={isSelected} {...props}>
-      <Heading color={"inherit"}>{children}</Heading>
+      <Heading color={"inherit"} p={2} m={2}>
+        {children}
+      </Heading>
     </StyledButton>
   );
 };

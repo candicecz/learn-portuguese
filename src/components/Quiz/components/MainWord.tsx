@@ -20,19 +20,20 @@ const MainWord: React.FC<MainWordProps> = ({
         fontSize={["3rem", "6rem"]}
         textAlign={"center"}
         opacity={0.8}
+        position={"relative"}
       >
         {children}
         {isInPortuguese && (
           <StyledLine opacity={isMuted ? 0.25 : 0.8}></StyledLine>
         )}
+        {isInPortuguese && (
+          <StyledIcon>
+            <Heading variant={"sm"} opacity={isMuted ? 0.25 : 0.8}>
+              <BsFillVolumeUpFill />
+            </Heading>
+          </StyledIcon>
+        )}
       </Heading>
-      {isInPortuguese && (
-        <StyledIcon>
-          <Heading variant={"sm"} opacity={isMuted ? 0.25 : 0.8}>
-            <BsFillVolumeUpFill />
-          </Heading>
-        </StyledIcon>
-      )}
     </StyledMainWord>
   );
 };

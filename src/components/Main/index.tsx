@@ -10,7 +10,7 @@ const answer = {rank: 1, portuguese: "não", english: "not"};
 const options = [
   {rank: 1, portuguese: "não", english: "not"},
   {rank: 3, portuguese: "é", english: "it's"},
-  {rank: 4, portuguese: "você", english: "you"},
+  {rank: 4, portuguese: "vocêt tambémta mbémambé mtambém", english: "you"},
   {rank: 5, portuguese: "também", english: "also"},
 ];
 

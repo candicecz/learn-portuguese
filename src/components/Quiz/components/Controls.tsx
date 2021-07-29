@@ -1,30 +1,39 @@
-import {useTheme} from "@emotion/react";
 import React from "react";
-import {Box, Button} from "src/components/global";
+import {Button} from "src/components/global";
+import {StyledQuizControls} from "../styles";
 
 interface QuizControlsProps {
-  answerIsSelected: boolean;
+  isSelectionMade: boolean;
+  showAnswer: boolean;
+  setShowAnswer: (args: boolean) => void;
+  resetQuestion: () => void;
 }
 
-const QuizControls: React.FC<QuizControlsProps> = ({answerIsSelected}) => {
-  const {theme} = useTheme();
-
+const QuizControls: React.FC<QuizControlsProps> = ({
+  isSelectionMade,
+  showAnswer,
+  setShowAnswer,
+  resetQuestion,
+}) => {
   return (
-    <Box mt={4}>
+    <StyledQuizControls mt={4} width={"100%"} p={4} justifyContent={"center"}>
       <Button
         variant={"solid"}
-        disabled={!answerIsSelected}
+        disabled={!isSelectionMade}
         onClick={() => {
-          // if (isAnswerCorrect !== null) {
-          //   theme.colors.updateGradient();
-          //   setIsAnswerCorrect(null);
-          // }
+          if (!showAnswer) {
+            console.log(1);
+            setShowAnswer(true);
+          } else {
+            console.log(2);
+
+            resetQuestion();
+          }
         }}
       >
-        check
-        {/* {isAnswerCorrect === null ? "Check answer" : "Next Question"} */}
+        {showAnswer ? "Next Question" : "Check Answer"}
       </Button>
-    </Box>
+    </StyledQuizControls>
   );
 };
 

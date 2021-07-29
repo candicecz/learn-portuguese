@@ -4,19 +4,25 @@ export interface StyledQuizProps {}
 
 export const StyledQuiz = styled(Box)<StyledQuizProps>`
   flex-direction: column;
-  flex: 1;
   width: 100%;
+  > * {
+    flex: 1;
+  }
 `;
 
+StyledQuiz.defaultProps = {
+  px: [0, 0, 6, "10%"],
+  flex: 1,
+};
+
 export const StyledMultipleChoice = styled(Box)(props => {
-  return {
-    flexDirection: "column",
-  };
+  return {flexWrap: "wrap", justifyContent: "center"};
 });
 
 StyledMultipleChoice.defaultProps = {
-  px: [4, 6],
+  px: [4, 5, 4, "15%"],
   width: "100%",
+  flex: [1, "unset"],
 };
 
 export const StyledMainWord = styled(Box)(props => {
@@ -41,5 +47,12 @@ StyledLine.defaultProps = {
 export const StyledIcon = styled(Box)``;
 StyledIcon.defaultProps = {
   position: "absolute",
-  bottom: 0,
+  width: "100%",
+  justifyContent: "center",
 };
+
+export const StyledQuizControls = styled(Box)(props => {
+  return {};
+});
+
+StyledQuizControls.defaultProps = {};

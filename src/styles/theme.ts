@@ -11,6 +11,7 @@ export interface ThemeProps {
     palette: {lt: string[]; dk: string[]};
     primary: string;
     secondary: string;
+    success: string;
     gradient: string;
     updateGradient: () => void;
   };
@@ -21,6 +22,7 @@ export const themeConfig: ThemeProps = {
     palette,
     primary,
     secondary,
+    success: "#5dcd2a",
     gradient: `linear-gradient(226deg, ${primary},${secondary})`,
     updateGradient: () => {
       console.log("this", this);
