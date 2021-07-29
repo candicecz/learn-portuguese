@@ -1,44 +1,35 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {StyledMain, StyledMainProps} from "./styles";
 import {Box, Heading} from "src/components/global";
-import AnswerOption from "src/components/AnswerOption";
 import {useTheme} from "@emotion/react";
 
-interface MainProps extends StyledMainProps {
-  // answer : {portuguese: "", english:""}
-  // options: answer[]
-}
+import Quiz from "src/components/Quiz";
+import Scoreboard from "src/components/Scoreboard";
+import {BsFillVolumeMuteFill, BsFillVolumeUpFill} from "react-icons/bs";
+import VolumeControl from "../VolumeControl";
 
-const Main: React.FC<MainProps> = ({children}) => {
+interface MainProps extends StyledMainProps {}
+
+const Main: React.FC<MainProps> = ({children, ...props}) => {
   const theme = useTheme();
+  // answerIsValid state if answer.english = option.text.english null, true, false // or portuguese
 
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(true);
-  // answerIsValid state if answer.english = option.text.english null, true, false // or portuguese
-  // Might put below in separate quiz component
-  // answer in Portugues or english state. show audio on different elements depending on that state.
+
+  // Default to sound off.
+  const [isMuted, setIsMuted] = useState(true);
+
   return (
-    <StyledMain flex={1} justifyContent={"center"}>
-      <Heading
-        fontFamily={"Muli-Bold"}
-        fontSize={["3rem", "6rem"]}
-        opacity={0.8}
-        textAlign={"center"}
-      >
-        Big Word
-      </Heading>
-      {/* <Box> */}
-      {/* map through options */}
-      {/* <button> */}
-      <AnswerOption />
-      {/* </button> */}
-      {/* </Box> */}
+    <>
+      <Scoreboard />
+      <VolumeControl isMuted={isMuted} setIsMuted={setIsMuted} />
+      <Quiz isMuted={isMuted} />
       <Box mt={4}>
-        {/* map through options */}
         <button onClick={() => theme.colors.updateGradient()}>
           {isAnswerCorrect === null ? "Check answer" : "Next Question"}
         </button>
       </Box>
-    </StyledMain>
+    </>
   );
 };
 

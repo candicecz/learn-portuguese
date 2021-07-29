@@ -7,6 +7,7 @@ import {StyledScoreBoard} from "./styles";
 interface ScoreBoardProps {}
 
 const Scoreboard: React.FC<ScoreBoardProps> = () => {
+  // score state + streak state
   return (
     <StyledScoreBoard px={[3, 4]} py={[1, 2]} justifyContent={"space-between"}>
       <Heading variant={["xs", "sm"]}>Score: 0</Heading>

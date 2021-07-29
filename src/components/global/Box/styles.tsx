@@ -4,8 +4,6 @@ import {
   BackgroundProps,
   border,
   BorderProps,
-  color,
-  ColorProps,
   flexbox,
   FlexboxProps,
   layout,
@@ -19,13 +17,12 @@ import {
 export interface StyledBoxProps
   extends BackgroundProps,
     BorderProps,
-    ColorProps,
     FlexboxProps,
     LayoutProps,
     PositionProps,
     SpaceProps {}
 
-export const StyledBox = styled.div<StyledBoxProps>(
+export const StyledBox = styled("div")<StyledBoxProps>(
   {
     display: "flex",
     flexDirection: "row",
@@ -33,7 +30,6 @@ export const StyledBox = styled.div<StyledBoxProps>(
   },
   background,
   border,
-  color,
   flexbox,
   layout,
   position,

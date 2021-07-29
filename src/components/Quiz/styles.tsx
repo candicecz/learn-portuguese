@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import {Box} from "src/components/global";
 
-export interface StyledMainProps {}
+export interface StyledQuizProps {}
 
-export const StyledMain = styled(Box)<StyledMainProps>`
+export const StyledQuiz = styled(Box)<StyledQuizProps>`
   flex-direction: column;
 `;

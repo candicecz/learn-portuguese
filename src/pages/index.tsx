@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Main from "src/components/Main";
-import Scoreboard from "src/components/Scoreboard";
 import PageLayout from "src/components/PageLayout";
 import GlobalStyles from "src/styles/GlobalStyles";
 import React, {useEffect, useState} from "react";
@@ -27,8 +26,7 @@ export default function Home() {
       <GlobalStyles />
       <ThemeProvider theme={theme}>
         <PageLayout>
-          <Scoreboard />
-          <Main></Main>
+          <Main />
         </PageLayout>
       </ThemeProvider>
     </>
