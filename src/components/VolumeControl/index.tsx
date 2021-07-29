@@ -1,18 +1,17 @@
-import React, {useState} from "react";
-import {Box, Heading, IconButton} from "src/components/global";
-
+import React from "react";
+import {Heading, IconButton} from "src/components/global";
 import {BsFillVolumeMuteFill, BsFillVolumeUpFill} from "react-icons/bs";
+import {StyledVolumeControl} from "./styles";
 
 interface VolumeControlProps {
   isMuted: boolean;
   setIsMuted: (arg: boolean) => void;
 }
 
+// Controls for user so they can toggle the volume on and off. Defaults to off.
 const VolumeControl: React.FC<VolumeControlProps> = ({isMuted, setIsMuted}) => {
-  // answerIsValid state if answer.english = option.text.english null, true, false // or portuguese
-
   return (
-    <Box width={"100%"} height={"4rem"} justifyContent={"flex-end"} p={2}>
+    <StyledVolumeControl>
       <IconButton
         aria-label={"Button for volume control."}
         onClick={() => setIsMuted(!isMuted)}
@@ -23,7 +22,7 @@ const VolumeControl: React.FC<VolumeControlProps> = ({isMuted, setIsMuted}) => {
           {isMuted ? <BsFillVolumeMuteFill /> : <BsFillVolumeUpFill />}
         </Heading>
       </IconButton>
-    </Box>
+    </StyledVolumeControl>
   );
 };
 export default VolumeControl;

@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import {css} from "@emotion/react";
+
 import {
   background,
   BackgroundProps,
@@ -12,6 +14,7 @@ import {
   SpaceProps,
   position,
   PositionProps,
+  variant,
 } from "styled-system";
 
 interface StyledSystemProps
@@ -22,9 +25,11 @@ interface StyledSystemProps
     PositionProps,
     SpaceProps {}
 
-export interface StyledButtonProps extends StyledSystemProps {}
-
-export const StyledButton = styled.button<StyledButtonProps>``;
+export type StyledButtonProps = StyledSystemProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    variant?: string | string[];
+    isSelected?: boolean;
+  };
 
 export interface StyledIconButtonProps
   extends BackgroundProps,
@@ -34,13 +39,60 @@ export interface StyledIconButtonProps
     PositionProps,
     SpaceProps {}
 
-export const StyledIconButton = styled.button<StyledIconButtonProps>`
-  ${background};
-  ${border};
-  ${color};
-  ${layout};
-  ${position};
-  ${space};
+const StyledSystemButton = styled("button")<StyledSystemProps>(
+  {
+    background: "transparent",
+    "&:hover": {cursor: "pointer"},
+    border: "none",
+  },
+  background,
+  border,
+  color,
+  layout,
+  position,
+  space,
+  variant({
+    variants: {
+      solid: {},
+      outline: {
+        color: "#fff",
+        border: "1px solid #fff",
+        borderRadius: "50px",
+        transition: "all 0.2s ease-in-out",
+      },
+    },
+  }),
+  props => {
+    if (props.variant === "outline") {
+      return {
+        "&:hover": {
+          background: "#fff",
+          color: props.theme.colors.secondary,
+          transition: "all 0.2s ease-in-out",
+        },
+      };
+    }
+  },
+);
+
+export const StyledButton = styled(StyledSystemButton)<StyledButtonProps>`
+  ${props =>
+    props.variant === "outline" &&
+    props.isSelected &&
+    css`
+      color: ${props.theme.colors.secondary};
+      background: #fff;
+    `}
+`;
+
+StyledButton.defaultProps = {
+  mb: 4,
+  minWidth: ["100%", "120px"],
+};
+
+export const StyledIconButton = styled(
+  StyledSystemButton,
+)<StyledIconButtonProps>`
   background: transparent;
   border: none;
   cursor: pointer;

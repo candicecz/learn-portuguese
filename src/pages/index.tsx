@@ -5,7 +5,7 @@ import GlobalStyles from "src/styles/GlobalStyles";
 import React, {useEffect, useState} from "react";
 import {ThemeProvider} from "@emotion/react";
 import {themeConfig, ThemeProps} from "src/styles/theme";
-import {useCustomTheme} from "src/components/hooks/useCustomTheme";
+import {useCustomTheme} from "src/hooks/useCustomTheme";
 
 export default function Home() {
   const {theme}: {theme: ThemeProps} = useCustomTheme(themeConfig);

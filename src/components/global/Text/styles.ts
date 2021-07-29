@@ -37,12 +37,11 @@ export interface StyledHeadingProps
     ColorProps,
     SpaceProps {}
 
-export const StyledHeading = styled.h3<StyledHeadingProps>(
-  {},
-  color,
-  typography,
-  space,
-  variant({
+export const StyledHeading = styled.h3<StyledHeadingProps>`
+  ${color};
+  ${typography};
+  ${space};
+  ${variant({
     variants: {
       xs: {fontSize: "0.75rem"},
       sm: {fontSize: "1rem"},
@@ -50,5 +49,5 @@ export const StyledHeading = styled.h3<StyledHeadingProps>(
       lg: {fontSize: "3rem"},
       xl: {fontSize: "5rem"},
     },
-  }),
-);
+  })};
+`;

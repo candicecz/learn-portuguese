@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import {
+  compose,
   background,
   BackgroundProps,
   border,
@@ -20,18 +21,15 @@ export interface StyledBoxProps
     FlexboxProps,
     LayoutProps,
     PositionProps,
-    SpaceProps {}
+    SpaceProps {
+  opacity?: number;
+}
 
-export const StyledBox = styled("div")<StyledBoxProps>(
+export const StyledBox = styled.div<StyledBoxProps>(
   {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
   },
-  background,
-  border,
-  flexbox,
-  layout,
-  position,
-  space,
+  compose(background, border, flexbox, layout, position, space),
 );

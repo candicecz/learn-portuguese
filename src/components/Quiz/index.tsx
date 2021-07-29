@@ -1,56 +1,63 @@
 import React, {useEffect, useState} from "react";
-import {StyledQuiz, StyledQuizProps} from "./styles";
-import {Heading} from "src/components/global";
-import AnswerOption from "src/components/AnswerOption";
+import {StyledQuiz, StyledQuizProps, StyledMultipleChoice} from "./styles";
+import Choice from "./components/Choice";
+import MainWord from "./components/MainWord";
 
+type Option = {
+  rank: number;
+  portuguese: string;
+  english: string;
+};
 interface QuizProps extends StyledQuizProps {
-  // answer : {portuguese: "", english:""}
-  // options: answer[]
+  answer: Option;
+  options: Option[];
   isMuted: boolean;
 }
 
-const answer = {rank: 1, portuguese: "não", english: "not"};
-const words = [
-  {rank: 1, portuguese: "não", english: "not"},
-  {rank: 2, portuguese: "de", english: "in"},
-  {rank: 3, portuguese: "é", english: "it's"},
-  {rank: 4, portuguese: "você", english: "you"},
-  {rank: 5, portuguese: "também", english: "also"},
-];
-const Quiz: React.FC<QuizProps> = ({children, isMuted}) => {
-  const [showPortugueseWord, setShowPortugueseWord] = useState(false);
+const Quiz: React.FC<QuizProps> = ({children, isMuted, answer, options}) => {
+  const [selection, setSelection] = useState<string | null>(null);
+  // Where null state corresponds to waiting for an answer.
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null);
+  // The language in which the main word is in that the user must guess the meaning.
+  const [guessPortugueseWord, setGuessPortugueseWord] = useState(true);
 
   useEffect(() => {
     // Decide randomly whether to show word in portuguese or english each time.
-    setShowPortugueseWord(Math.random() < 0.5);
+    setGuessPortugueseWord(Math.random() < 0.5);
   }, []);
 
-  // answer in Portugues or english state. show audio on different elements depending on that state.
   return (
-    <StyledQuiz flex={1} justifyContent={"center"}>
-      <Heading
-        fontFamily={"Muli-Bold"}
-        fontSize={["3rem", "6rem"]}
-        opacity={0.8}
-        textAlign={"center"}
+    <StyledQuiz>
+      <Choice
+        word={answer.portuguese}
+        isMuted={isMuted}
+        isPortugueseWord={guessPortugueseWord}
+        variant={"none"}
+        mb={0}
       >
-        {showPortugueseWord ? answer.portuguese : answer.english}
-      </Heading>
-
-      {words.map(w => {
-        return (
-          <AnswerOption
-            key={w.rank}
-            word={w.portuguese}
-            isLanguagePortuguese={!showPortugueseWord}
-            isCorrect={true}
-            isMuted={isMuted}
-          >
-            {/* if answer is in portuguese, we show options in english and vice versa. */}
-            {showPortugueseWord ? w.english : w.portuguese}
-          </AnswerOption>
-        );
-      })}
+        <MainWord isInPortuguese={guessPortugueseWord} isMuted={isMuted}>
+          {guessPortugueseWord ? answer.portuguese : answer.english}
+        </MainWord>
+      </Choice>
+      <StyledMultipleChoice>
+        {options.map(o => {
+          // if answer is in portuguese, we show options in english and vice versa.
+          let word = guessPortugueseWord ? o.english : o.portuguese;
+          return (
+            <Choice
+              key={o.rank}
+              word={word}
+              isMuted={isMuted}
+              isPortugueseWord={!guessPortugueseWord}
+              onClick={() => setSelection(word)}
+              // isCorrect={true}
+            >
+              {word}
+            </Choice>
+          );
+        })}
+      </StyledMultipleChoice>
+      {/* Submit Answer */}
     </StyledQuiz>
   );
 };
