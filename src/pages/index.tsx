@@ -36,17 +36,19 @@ export default function Home() {
         return [];
       }
 
-      return csvData.slice(quizData.length, limit).map(d => {
-        if (!d) {
-          return;
-        }
-        return {
-          rank: d.Rank,
-          portuguese: d.Portuguese.toLowerCase(),
-          english: `${d.English}`.toLowerCase(),
-          called: 0,
-        };
-      });
+      return csvData
+        .slice(quizData.length, limit)
+        .map((d: {Rank: number; Portuguese: string; English: string}) => {
+          if (!d) {
+            return;
+          }
+          return {
+            rank: d.Rank,
+            portuguese: d.Portuguese.toLowerCase(),
+            english: `${d.English}`.toLowerCase(),
+            called: 0,
+          };
+        });
     };
     setQuizData(prev => {
       return [...prev, ...formatData()];
