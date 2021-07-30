@@ -20,4 +20,7 @@ StyledControls.defaultProps = {
   top: 0,
   right: 0,
   zIndex: 1,
+  flexDirection: ["row-reverse", "column"],
+  width: ["100%", "unset"],
+  justifyContent: "space-between",
 };

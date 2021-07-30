@@ -70,7 +70,7 @@ export const StyledBanner = styled(Box)<StyledQuizControlsProps>`
     props.animate &&
     css`
       animation: ${slideIn} 1s ease 1;
-      transform: translate3d(0, -60px, 0);
+      transform: translate3d(0, -50px, 0);
     `};
 `;
 
@@ -85,10 +85,11 @@ export const StyledQuizControls = styled(Box)<StyledQuizControlsProps>`
 `;
 
 StyledQuizControls.defaultProps = {
-  mt: 4,
+  mt: [2, 4],
   width: "100%",
-  p: 4,
+  p: [4],
   justifyContent: "center",
+  alignItems: ["flex-start", "center"],
 };
 
 // Keyframe definitions.
@@ -118,6 +119,6 @@ const slideIn = keyframes`
   }
 
   50%,to {
-    transform: translate3d(0,-60px,0);
+    transform: translate3d(0,-50px,0);
   }
 `;

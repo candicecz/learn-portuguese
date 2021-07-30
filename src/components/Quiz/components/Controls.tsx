@@ -43,7 +43,7 @@ const QuizControls: React.FC<QuizControlsProps> = ({
         onClick={() => (!showAnswer ? setShowAnswer(true) : resetQuestion())}
       >
         <Box width={"100%"} justifyContent={"center"} position={"relative"}>
-          <Heading color={"inherit"} p={2} m={2}>
+          <Heading color={"inherit"}>
             {showAnswer ? "Next Question" : "Check Answer"}
           </Heading>
           {showAnswer && <BsArrowRight size={"1.5rem"} />}

@@ -7,6 +7,7 @@ import VolumeControl from "src/components/VolumeControl";
 import DifficultyControl from "src/components/DifficultyControl";
 import {Box, Loading} from "src/components/global";
 import {useOptions} from "src/hooks/useOptions";
+import Instructions from "../Instructions";
 
 interface MainProps extends StyledMainProps {
   data: DataProps[];
@@ -48,18 +49,17 @@ const Main: React.FC<MainProps> = ({
           <Loading />
         ) : (
           <>
+            <Instructions></Instructions>
             <StyledControls>
-              <Box flexDirection={"column"}>
-                <VolumeControl isMuted={isMuted} setIsMuted={setIsMuted} />
-                <DifficultyControl
-                  isHardMode={isHardMode}
-                  setIsHardMode={() => {
-                    setIsHardMode(!isHardMode);
-                    // update data with harder questions
-                    toggleHardMode();
-                  }}
-                />
-              </Box>
+              <VolumeControl isMuted={isMuted} setIsMuted={setIsMuted} />
+              <DifficultyControl
+                isHardMode={isHardMode}
+                setIsHardMode={() => {
+                  setIsHardMode(!isHardMode);
+                  // update data with harder questions
+                  toggleHardMode();
+                }}
+              />
             </StyledControls>
             <Quiz
               isMuted={isMuted}

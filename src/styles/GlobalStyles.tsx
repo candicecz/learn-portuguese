@@ -9,6 +9,13 @@ const GlobalStyles = () => {
         }
         html,
         body {
+          height: 100%;
+          > div {
+            height: 100%;
+          }
+        }
+        html,
+        body {
           font-size: 18px;
           font-family: Muli;
           padding: 0;
