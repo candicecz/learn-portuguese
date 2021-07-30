@@ -95,6 +95,7 @@ const Quiz: React.FC<QuizProps> = ({
       {/* Submit Answer */}
       <QuizControls
         isSelectionMade={!!selection}
+        isAnswerCorrect={isAnswerCorrect(selection!, answer)}
         resetQuestion={() => {
           getNextQuestion();
           theme.colors.updateGradient();

@@ -85,6 +85,12 @@ const StyledSystemButton = styled("button")<StyledSystemProps>(
   },
 );
 
+const solid_button_hover = (props: any) => `
+  background: #fff;
+  color: ${props.theme.colors.secondary};
+  transition: all 0.2s ease-in-out;
+`;
+
 export const StyledButton = styled(StyledSystemButton)<StyledButtonProps>`
   &:hover {
     cursor: ${props => (props.disabled ? "default" : "pointer")};
@@ -105,6 +111,33 @@ export const StyledButton = styled(StyledSystemButton)<StyledButtonProps>`
     css`
       color: #fff;
       background: ${props.theme.colors.success};
+    `}
+
+    ${props =>
+    props.variant === "solid" &&
+    css`
+      border: 1px solid #fff;
+      background: #ffd9d987;
+      color: #fff;
+      border-radius: 3px;
+      transition: all 0.2s ease-in-out;
+    `}
+
+    ${props =>
+    props.variant === "solid" &&
+    !props.disabled &&
+    css`
+      &:hover {
+        ${solid_button_hover(props)}
+      }
+    `}
+
+    ${props =>
+    props.variant === "solid" &&
+    !props.disabled &&
+    props.isSelected &&
+    css`
+      ${solid_button_hover(props)}
     `}
 `;
 

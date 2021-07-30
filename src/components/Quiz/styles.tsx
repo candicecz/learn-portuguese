@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
+import {css, keyframes} from "@emotion/react";
 import {Box, Button} from "src/components/global";
 export interface StyledQuizProps {}
 
 export const StyledQuiz = styled(Box)<StyledQuizProps>`
   flex-direction: column;
   width: 100%;
+  overflow: hidden;
   > * {
     flex: 1;
   }
@@ -51,12 +53,71 @@ StyledIcon.defaultProps = {
   justifyContent: "center",
 };
 
-export const StyledQuizControls = styled(Box)(props => {
-  return {};
-});
-
-StyledQuizControls.defaultProps = {};
-
 export const StyledChoiceButton = styled(Button)``;
 
 StyledChoiceButton.defaultProps = {};
+
+interface StyledQuizControlsProps {
+  animate: boolean;
+}
+
+export const StyledBanner = styled(Box)<StyledQuizControlsProps>`
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-transform: capitalize;
+  ${props =>
+    props.animate &&
+    css`
+      animation: ${slideIn} 1s ease 1;
+      transform: translate3d(0, -60px, 0);
+    `};
+`;
+
+StyledBanner.defaultProps = {};
+
+export const StyledQuizControls = styled(Box)<StyledQuizControlsProps>`
+  ${props =>
+    props.animate &&
+    css`
+      animation: ${shake} 1s ease 1;
+    `};
+`;
+
+StyledQuizControls.defaultProps = {
+  mt: 4,
+  width: "100%",
+  p: 4,
+  justifyContent: "center",
+};
+
+// Keyframe definitions.
+
+const shake = keyframes`
+  from, 20%, 80%, to {
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    transform: translate3d(30px, 0, 0);
+  }
+
+  70% {
+    transform: translate3d(-15px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+`;
+
+const slideIn = keyframes`
+  from {
+    transform: translate3d(0,0,0);
+    opacity:0;
+  }
+
+  50%,to {
+    transform: translate3d(0,-60px,0);
+  }
+`;
