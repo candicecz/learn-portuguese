@@ -24,8 +24,6 @@ export const themeConfig: ThemeProps = {
     secondary,
     success: "#5dcd2a",
     gradient: `linear-gradient(226deg, ${primary},${secondary})`,
-    updateGradient: () => {
-      console.log("this", this);
-    },
+    updateGradient: () => {},
   },
 };

@@ -5,6 +5,7 @@ import MainWord from "./components/MainWord";
 import QuizControls from "./components/Controls";
 import {useTheme} from "@emotion/react";
 import {Box} from "src/components/global";
+import {getRandomNum} from "src/utils/helpers";
 
 type Option = {
   rank: number;
@@ -12,24 +13,29 @@ type Option = {
   english: string;
 };
 interface QuizProps extends StyledQuizProps {
-  answer: Option;
   options: Option[];
   isMuted: boolean;
 }
 
-const Quiz: React.FC<QuizProps> = ({isMuted, answer, options}) => {
-  const theme = useTheme();
-
+const Quiz: React.FC<QuizProps> = ({isMuted, options}) => {
+  const [answer, setAnswer] = useState<Option | null>(null);
+  // Where null state corresponds to waiting for a selection.
   const [selection, setSelection] = useState<string | null>(null);
-  // Where null state corresponds to waiting for an answer.
   const [showAnswer, setShowAnswer] = useState(false);
 
   // The language in which the main word is in that the user must guess the meaning.
   const [guessPortugueseWord, setGuessPortugueseWord] = useState(true);
+  const theme = useTheme();
 
-  let answer_translation = guessPortugueseWord
-    ? answer.english
-    : answer.portuguese;
+  useEffect(() => {
+    setAnswer(() => {
+      if (options) {
+        // Select a random option for the answer.
+        return options[getRandomNum(options.length)];
+      }
+      return null;
+    });
+  }, [options]);
 
   const handleReset = useCallback(() => {
     setGuessPortugueseWord(Math.random() < 0.5);
@@ -43,9 +49,9 @@ const Quiz: React.FC<QuizProps> = ({isMuted, answer, options}) => {
     handleReset();
   }, [handleReset]);
 
-  return (
+  return !answer ? null : (
     <StyledQuiz>
-      <Box>
+      <Box justifyContent={"center"}>
         <Choice
           word={answer.portuguese}
           isMuted={isMuted}
@@ -62,7 +68,9 @@ const Quiz: React.FC<QuizProps> = ({isMuted, answer, options}) => {
         {options.map(o => {
           // if answer is in portuguese, we show options in english and vice versa.
           let word = guessPortugueseWord ? o.english : o.portuguese;
-
+          let answer_translation = guessPortugueseWord
+            ? answer.english
+            : answer.portuguese;
           return (
             <Choice
               key={o.rank}

@@ -11,6 +11,7 @@ export const useAudioPlayback = () => {
   message.lang = "pt-PT";
   message.pitch = 1; // From 0 to 2
   message.rate = 1;
+  message.volume = 1;
 
   let playSlowly = false;
 

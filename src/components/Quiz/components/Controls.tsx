@@ -22,11 +22,8 @@ const QuizControls: React.FC<QuizControlsProps> = ({
         disabled={!isSelectionMade}
         onClick={() => {
           if (!showAnswer) {
-            console.log(1);
             setShowAnswer(true);
           } else {
-            console.log(2);
-
             resetQuestion();
           }
         }}

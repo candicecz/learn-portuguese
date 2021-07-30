@@ -6,15 +6,52 @@ import React, {useEffect, useState} from "react";
 import {ThemeProvider} from "@emotion/react";
 import {themeConfig, ThemeProps} from "src/styles/theme";
 import {useCustomTheme} from "src/hooks/useCustomTheme";
+import csvData from "../../public/data/data.csv";
+
+export interface DataProps {
+  rank: number;
+  portuguese: string;
+  english: string;
+  called: number;
+}
 
 export default function Home() {
   const {theme}: {theme: ThemeProps} = useCustomTheme(themeConfig);
 
+  // Ensure component is mounted.
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
     return () => setMounted(false);
   }, []);
+
+  // Setup quiz data with a limit of the first 1000 words on easy mode and 2000 on hard.
+  const [quizData, setQuizData] = useState<DataProps[]>([]);
+  const [limit, setLimit] = useState(1000);
+
+  useEffect(() => {
+    const formatData = () => {
+      // load more quiz data for hard mode when we need it.
+      if (quizData.length >= limit) {
+        return [];
+      }
+
+      return csvData.slice(quizData.length, limit).map(d => {
+        if (!d) {
+          return;
+        }
+        return {
+          rank: d.Rank,
+          portuguese: d.Portuguese.toLowerCase(),
+          english: `${d.English}`.toLowerCase(),
+          called: 0,
+        };
+      });
+    };
+    setQuizData(prev => {
+      return [...prev, ...formatData()];
+    });
+  }, [quizData.length, limit]);
 
   return !mounted ? null : (
     <>
@@ -26,7 +63,10 @@ export default function Home() {
       <GlobalStyles />
       <ThemeProvider theme={theme}>
         <PageLayout>
-          <Main />
+          <Main
+            data={quizData.slice(0, limit)}
+            toggleHardMode={() => setLimit(limit === 1000 ? 2000 : 1000)}
+          />
         </PageLayout>
       </ThemeProvider>
     </>

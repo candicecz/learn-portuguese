@@ -11,3 +11,13 @@ StyledMain.defaultProps = {
   justifyContent: "center",
   flexDirection: "column",
 };
+
+interface StyledControlsProps {}
+export const StyledControls = styled(Box)<StyledControlsProps>``;
+
+StyledControls.defaultProps = {
+  position: "absolute",
+  top: 0,
+  right: 0,
+  zIndex: 1000,
+};
