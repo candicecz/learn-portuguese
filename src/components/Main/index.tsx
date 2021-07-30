@@ -25,16 +25,23 @@ const Main: React.FC<MainProps> = ({
   const [isMuted, setIsMuted] = useState(true);
   // Default to easy mode.
   const [isHardMode, setIsHardMode] = useState(false);
+  // Handles scoreboard.
   const [score, setScore] = useState(0);
+  const [streak, setStreak] = useState(0);
   const {options, setOptions} = useOptions(Array(4));
 
   useEffect(() => {
     setOptions(data);
   }, [data, setOptions]);
 
+  const handleScore = (pointValue: number) => {
+    setScore(score + pointValue);
+    setStreak(pointValue > 0 ? streak + pointValue : pointValue);
+  };
+
   return (
     <>
-      <Scoreboard />
+      <Scoreboard score={score} streak={streak} />
       {/* [TO DO] add instructions */}
       <StyledMain>
         {!data ? (
@@ -54,7 +61,12 @@ const Main: React.FC<MainProps> = ({
                 />
               </Box>
             </StyledControls>
-            <Quiz isMuted={isMuted} options={options} />
+            <Quiz
+              isMuted={isMuted}
+              options={options}
+              handleScore={handleScore}
+              getNextQuestion={() => setOptions(data)}
+            />
           </>
         )}
       </StyledMain>

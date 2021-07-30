@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {Box} from "src/components/global";
+import {Box, Button} from "src/components/global";
 export interface StyledQuizProps {}
 
 export const StyledQuiz = styled(Box)<StyledQuizProps>`
@@ -56,3 +56,7 @@ export const StyledQuizControls = styled(Box)(props => {
 });
 
 StyledQuizControls.defaultProps = {};
+
+export const StyledChoiceButton = styled(Button)``;
+
+StyledChoiceButton.defaultProps = {};

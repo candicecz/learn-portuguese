@@ -35,6 +35,7 @@ export type StyledButtonProps = StyledSystemProps &
     variant?: string | string[];
     isSelected?: boolean;
     isValid?: boolean;
+    isDisabled?: boolean;
   };
 
 export interface StyledIconButtonProps
@@ -71,7 +72,7 @@ const StyledSystemButton = styled("button")<StyledSystemProps>(
     },
   }),
   props => {
-    if (props.variant === "outline" && !props.disabled) {
+    if (props.variant === "outline" && !props.isDisabled) {
       return {
         "&:hover": {
           background: "#fff",
@@ -123,7 +124,7 @@ export const StyledIconButton = styled(
   cursor: pointer;
   transition: opacity 0.2s ease-in-out;
   &:hover {
-    opacity: 0.7;
+    opacity: 0.9;
     transition: opacity 0.2s ease-in-out;
   }
 `;

@@ -4,13 +4,15 @@ import Image from "next/image";
 import fire from "../../../public/fire.png";
 import {StyledScoreBoard} from "./styles";
 
-interface ScoreBoardProps {}
+interface ScoreBoardProps {
+  score: number;
+  streak: number;
+}
 
-const Scoreboard: React.FC<ScoreBoardProps> = () => {
-  // score state + streak state
+const Scoreboard: React.FC<ScoreBoardProps> = ({score, streak}) => {
   return (
     <StyledScoreBoard px={[3, 4]} py={[1, 2]} justifyContent={"space-between"}>
-      <Heading variant={["xs", "sm"]}>Score: 0</Heading>
+      <Heading variant={["xs", "sm"]}>Score: {score}</Heading>
       <Box>
         <Box
           background={"#ffffff80"}
@@ -25,7 +27,7 @@ const Scoreboard: React.FC<ScoreBoardProps> = () => {
             <Image layout={"fill"} src={fire} alt="Picture of the author" />
           </Box>
         </Box>
-        <Heading variant={["xs", "sm"]}>Streak: 0</Heading>
+        <Heading variant={["xs", "sm"]}>Streak: {streak}</Heading>
       </Box>
     </StyledScoreBoard>
   );

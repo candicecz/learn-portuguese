@@ -1,6 +1,7 @@
 import React from "react";
 import {Button, ButtonProps} from "src/components/global";
 import {useAudioPlayback} from "src/hooks/useAudioPlayback";
+import {StyledChoiceButton} from "../styles";
 
 interface ChoiceProps extends ButtonProps {
   word: string;
@@ -28,7 +29,7 @@ const Choice: React.FC<ChoiceProps> = ({
   const {getOnMouseDownProps, getOnClickProps} = useAudioPlayback();
 
   return (
-    <Button
+    <StyledChoiceButton
       aria-label={word}
       variant={variant || "outline"}
       // only play audio if word is in portuguese and audio is turned on.
@@ -42,7 +43,7 @@ const Choice: React.FC<ChoiceProps> = ({
       {...props}
     >
       {children}
-    </Button>
+    </StyledChoiceButton>
   );
 };
 

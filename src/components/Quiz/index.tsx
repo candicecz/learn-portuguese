@@ -15,9 +15,16 @@ type Option = {
 interface QuizProps extends StyledQuizProps {
   options: Option[];
   isMuted: boolean;
+  handleScore: (arg: number) => void;
+  getNextQuestion: () => void;
 }
 
-const Quiz: React.FC<QuizProps> = ({isMuted, options}) => {
+const Quiz: React.FC<QuizProps> = ({
+  isMuted,
+  options,
+  getNextQuestion,
+  handleScore,
+}) => {
   const [answer, setAnswer] = useState<Option | null>(null);
   // Where null state corresponds to waiting for a selection.
   const [selection, setSelection] = useState<string | null>(null);
@@ -27,27 +34,27 @@ const Quiz: React.FC<QuizProps> = ({isMuted, options}) => {
   const [guessPortugueseWord, setGuessPortugueseWord] = useState(true);
   const theme = useTheme();
 
-  useEffect(() => {
-    setAnswer(() => {
-      if (options) {
-        // Select a random option for the answer.
-        return options[getRandomNum(options.length)];
-      }
-      return null;
-    });
-  }, [options]);
-
-  const handleReset = useCallback(() => {
+  const handleReset = () => {
     setGuessPortugueseWord(Math.random() < 0.5);
     setSelection(null);
     setShowAnswer(false);
-    theme.colors.updateGradient();
-  }, []);
+  };
+
+  const isAnswerCorrect = (value: string, answer: Option) => {
+    if (!answer || !value) {
+      return false;
+    }
+    return guessPortugueseWord
+      ? answer.english === value
+      : answer.portuguese === value;
+  };
 
   useEffect(() => {
-    // Decide randomly whether to show word in portuguese or english each time.
+    // Reset quiz state.
     handleReset();
-  }, [handleReset]);
+    // Select a random option for the answer.
+    setAnswer(() => (options ? options[getRandomNum(options.length)] : null));
+  }, [options]);
 
   return !answer ? null : (
     <StyledQuiz>
@@ -58,6 +65,7 @@ const Quiz: React.FC<QuizProps> = ({isMuted, options}) => {
           isPortugueseWord={guessPortugueseWord}
           variant={"none"}
           mb={0}
+          disabled={isMuted || !guessPortugueseWord} // disable if muted or word is in english
         >
           <MainWord isInPortuguese={guessPortugueseWord} isMuted={isMuted}>
             {guessPortugueseWord ? answer.portuguese : answer.english}
@@ -67,10 +75,7 @@ const Quiz: React.FC<QuizProps> = ({isMuted, options}) => {
       <StyledMultipleChoice>
         {options.map(o => {
           // if answer is in portuguese, we show options in english and vice versa.
-          let word = guessPortugueseWord ? o.english : o.portuguese;
-          let answer_translation = guessPortugueseWord
-            ? answer.english
-            : answer.portuguese;
+          const word = guessPortugueseWord ? o.english : o.portuguese;
           return (
             <Choice
               key={o.rank}
@@ -79,8 +84,8 @@ const Quiz: React.FC<QuizProps> = ({isMuted, options}) => {
               isPortugueseWord={!guessPortugueseWord}
               onClick={() => !showAnswer && setSelection(word)}
               isSelected={word === selection}
-              isValid={showAnswer && word === answer_translation}
-              disabled={!!showAnswer}
+              isValid={showAnswer && isAnswerCorrect(word, answer)}
+              isDisabled={!!showAnswer}
             >
               {word}
             </Choice>
@@ -90,9 +95,20 @@ const Quiz: React.FC<QuizProps> = ({isMuted, options}) => {
       {/* Submit Answer */}
       <QuizControls
         isSelectionMade={!!selection}
-        resetQuestion={handleReset}
+        resetQuestion={() => {
+          getNextQuestion();
+          theme.colors.updateGradient();
+          // Update points when next question appears. (could put this in setShowAnswer prop if you want it to update the score as soon as the answer appears)
+          const points = isAnswerCorrect(selection!, answer) ? 1 : 0;
+          handleScore(points);
+        }}
         showAnswer={showAnswer}
-        setShowAnswer={setShowAnswer}
+        setShowAnswer={show => {
+          if (!selection) {
+            return;
+          }
+          setShowAnswer(show);
+        }}
       />
     </StyledQuiz>
   );
