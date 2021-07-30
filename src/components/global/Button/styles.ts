@@ -28,6 +28,7 @@ interface StyledSystemProps
     PositionProps,
     SpaceProps {
   variant?: string | string[];
+  isDisabled?: boolean;
 }
 
 export type StyledButtonProps = StyledSystemProps &
@@ -35,7 +36,6 @@ export type StyledButtonProps = StyledSystemProps &
     variant?: string | string[];
     isSelected?: boolean;
     isValid?: boolean;
-    isDisabled?: boolean;
   };
 
 export interface StyledIconButtonProps

@@ -1,35 +1,64 @@
-import React from "react";
-import {Box, Heading, Text} from "src/components/global";
-import Image from "next/image";
-import fire from "../../../public/fire.png";
-import {StyledScoreBoard} from "./styles";
+import React, {useState, useEffect, useCallback} from "react";
+import Scores from "./components/Scores";
+import {Box, Heading} from "src/components/global";
+import {StyledScoreBoard, StyledScoreDrawer} from "./styles";
+import {useLocalStorage} from "src/hooks/useLocalStorage";
 
-interface ScoreBoardProps {
+export interface ScoreBoardProps {
   score: number;
   streak: number;
 }
 
-const Scoreboard: React.FC<ScoreBoardProps> = ({score, streak}) => {
+const Scoreboard: React.FC<ScoreBoardProps> = props => {
+  const {score, streak} = props;
+  const [openDrawer, setOpenDrawer] = useState(false);
+  const [localStorage, setLocalStorage] = useLocalStorage("scoreboard", {
+    score,
+    streak,
+  });
+
+  const handleLocalStorage = useCallback(() => {
+    setLocalStorage((prev: any) => {
+      let scoreboard = {...prev};
+      if (score > prev.score) {
+        scoreboard = {...scoreboard, score};
+      }
+      if (streak > prev.streak) {
+        scoreboard = {...scoreboard, streak};
+      }
+      return scoreboard;
+    });
+  }, [score, setLocalStorage, streak]);
+  useEffect(() => handleLocalStorage(), [handleLocalStorage, score, streak]);
+
   return (
-    <StyledScoreBoard px={[3, 4]} py={[1, 2]} justifyContent={"space-between"}>
-      <Heading variant={["xs", "sm"]}>Score: {score}</Heading>
-      <Box>
-        <Box
-          background={"#ffffff80"}
-          width={"1.5rem"}
-          height={"1.5rem"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          borderRadius={"50%"}
-          mr={2}
-        >
-          <Box width={"1rem"} height={"1rem"} position="relative">
-            <Image layout={"fill"} src={fire} alt="Picture of the author" />
-          </Box>
-        </Box>
-        <Heading variant={["xs", "sm"]}>Streak: {streak}</Heading>
-      </Box>
-    </StyledScoreBoard>
+    <Box position={"relative"}>
+      <StyledScoreBoard
+        onClick={() => {
+          setOpenDrawer(!openDrawer);
+        }}
+      >
+        <Scores {...props} />
+      </StyledScoreBoard>
+      {openDrawer && (
+        <StyledScoreDrawer>
+          <StyledScoreBoard
+            flexDirection={["column", "row"]}
+            alignItems={"center"}
+            onClick={() => {
+              setOpenDrawer(!openDrawer);
+            }}
+          >
+            <Box flex={1}>
+              <Heading variant={"sm"}>All Time Best</Heading>
+            </Box>
+            <Box flexDirection={"column"}>
+              <Scores score={localStorage.score} streak={localStorage.streak} />
+            </Box>
+          </StyledScoreBoard>
+        </StyledScoreDrawer>
+      )}
+    </Box>
   );
 };
 

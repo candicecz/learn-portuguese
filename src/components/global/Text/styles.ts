@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 import {
   color,
   ColorProps,
+  layout,
+  LayoutProps,
   position,
   PositionProps,
   space,
@@ -14,12 +16,14 @@ import {
 export interface StyledTextProps
   extends TypographyProps,
     ColorProps,
+    LayoutProps,
     PositionProps,
     SpaceProps {}
 
 export const StyledText = styled.p<StyledTextProps>(
   {},
   color,
+  layout,
   position,
   typography,
   space,
@@ -39,12 +43,14 @@ StyledText.defaultProps = {m: 0};
 export interface StyledHeadingProps
   extends TypographyProps,
     ColorProps,
+    LayoutProps,
     PositionProps,
     SpaceProps {}
 
 export const StyledHeading = styled.h3<StyledHeadingProps>`
   ${color};
   ${typography};
+  ${layout};
   ${position};
   ${space};
   ${variant({
