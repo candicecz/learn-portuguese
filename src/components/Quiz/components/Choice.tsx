@@ -26,7 +26,8 @@ const Choice: React.FC<ChoiceProps> = ({
   // only play audio if word is in portuguese and audio is turned on.
   let text = !isMuted && isPortugueseWord ? word : null;
 
-  const {getOnMouseDownProps, getOnClickProps} = useAudioPlayback();
+  const {getOnMouseDownProps, getOnClickProps, getOnTouchStartProps} =
+    useAudioPlayback();
 
   return (
     <StyledChoiceButton
@@ -39,6 +40,9 @@ const Choice: React.FC<ChoiceProps> = ({
       {...getOnClickProps({
         text,
         onClick,
+      })}
+      {...getOnTouchStartProps({
+        text,
       })}
       {...props}
     >

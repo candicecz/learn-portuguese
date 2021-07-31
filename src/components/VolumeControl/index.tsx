@@ -16,7 +16,7 @@ const VolumeControl: React.FC<VolumeControlProps> = ({isMuted, setIsMuted}) => {
       height={"100%"}
       opacity={isMuted ? 0.7 : 1}
     >
-      <Heading variant={"md"} m={0}>
+      <Heading variant={"lg"} m={0}>
         {isMuted ? <BsFillVolumeMuteFill /> : <BsFillVolumeUpFill />}
       </Heading>
     </IconButton>

@@ -50,7 +50,7 @@ const Scoreboard: React.FC<ScoreBoardProps> = props => {
             }}
           >
             <Box flex={1}>
-              <Heading variant={"sm"}>All Time Best</Heading>
+              <Heading variant={"sm"}>Your Best Scores</Heading>
             </Box>
             <Box flexDirection={"column"}>
               <Scores score={localStorage.score} streak={localStorage.streak} />

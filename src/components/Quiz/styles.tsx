@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import {css, keyframes} from "@emotion/react";
-import {Box, Button} from "src/components/global";
+import {Box, Button, Heading} from "src/components/global";
 export interface StyledQuizProps {}
 
 export const StyledQuiz = styled(Box)<StyledQuizProps>`
@@ -90,6 +90,16 @@ StyledQuizControls.defaultProps = {
   p: [4],
   justifyContent: "center",
   alignItems: ["flex-start", "center"],
+};
+
+export const StyledHeading = styled(Heading)``;
+
+StyledHeading.defaultProps = {
+  fontFamily: "Muli-Bold",
+  fontSize: ["12vw", "6rem"],
+  textAlign: "center",
+  opacity: 0.8,
+  position: "relative",
 };
 
 // Keyframe definitions.

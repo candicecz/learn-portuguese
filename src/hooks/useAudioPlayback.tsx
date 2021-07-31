@@ -49,6 +49,23 @@ export const useAudioPlayback = () => {
   } = {}) => {
     return {
       onMouseDown: callFnsInSequence(onMouseDown, () => handleMouseDown(text)),
+
+      ...props,
+    };
+  };
+
+  const getOnTouchStartProps = ({
+    onTouchStart,
+    text = null,
+    ...props
+  }: {
+    onTouchStart?: () => void | null;
+    text?: string | null;
+  } = {}) => {
+    return {
+      onTouchStart: callFnsInSequence(onTouchStart, () =>
+        handleMouseDown(text),
+      ),
       ...props,
     };
   };
@@ -79,6 +96,7 @@ export const useAudioPlayback = () => {
     message,
     onMouseDown: handleMouseDown,
     getOnMouseDownProps,
+    getOnTouchStartProps,
     onClick: handleClick,
     getOnClickProps,
   };

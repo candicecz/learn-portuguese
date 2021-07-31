@@ -43,7 +43,6 @@ const Main: React.FC<MainProps> = ({
   return (
     <>
       <Scoreboard score={score} streak={streak} />
-      {/* [TO DO] add instructions */}
       <StyledMain>
         {!data ? (
           <Loading />

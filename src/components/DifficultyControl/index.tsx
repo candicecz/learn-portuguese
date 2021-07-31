@@ -19,7 +19,7 @@ const DifficultyControl: React.FC<DifficultyControlProps> = ({
       height={"100%"}
       opacity={!isHardMode ? 0.7 : 1}
     >
-      <Heading m={0} variant={"md"}>
+      <Heading m={0} variant={"lg"}>
         <GiBurningSkull />
       </Heading>
     </IconButton>

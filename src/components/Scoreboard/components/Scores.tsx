@@ -1,9 +1,8 @@
 import React from "react";
-import {Box, Heading} from "src/components/global";
+import {Box, Heading, StyledIconWrapper} from "src/components/global";
 import Image from "next/image";
 import fire from "../../../../public/fire.png";
 import trophy from "../../../../public/trophy.png";
-import {StyledIconWrapper} from "../styles";
 import {ScoreBoardProps} from "../index";
 
 const Scores: React.FC<ScoreBoardProps> = ({score, streak}) => {

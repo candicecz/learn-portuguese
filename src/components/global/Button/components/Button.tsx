@@ -14,7 +14,13 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <StyledButton theme={theme} isSelected={isSelected} {...props}>
       {typeof children === "string" ? (
-        <Heading color={"inherit"} p={[1, 2]} m={[1, 2]} variant={["sm"]}>
+        <Heading
+          color={"inherit"}
+          p={[1, 2]}
+          m={[1, 2]}
+          variant={["sm"]}
+          style={{userSelect: "none"}}
+        >
           {children}
         </Heading>
       ) : (

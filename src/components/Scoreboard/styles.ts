@@ -57,16 +57,3 @@ StyledScoreDrawer.defaultProps = {
   width: "100%",
   zIndex: 100,
 };
-
-export interface StyledIconWrapperProps {}
-
-export const StyledIconWrapper = styled(Box)<StyledIconWrapperProps>``;
-StyledIconWrapper.defaultProps = {
-  background: "#ffffff80",
-  width: "1.5rem",
-  height: "1.5rem",
-  justifyContent: "center",
-  alignItems: "center",
-  borderRadius: "50%",
-  mr: 2,
-};
