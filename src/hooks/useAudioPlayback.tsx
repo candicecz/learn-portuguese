@@ -1,3 +1,5 @@
+import {checkIsMobile} from "src/utils/helpers";
+
 const callFnsInSequence =
   (...fns: ((() => void) | undefined)[]) =>
   (...args: any[]) => {
@@ -7,6 +9,7 @@ const callFnsInSequence =
 
 // handles audio play back when user mouses down / click an audio element
 export const useAudioPlayback = () => {
+  // Set up audio
   const message = new window.SpeechSynthesisUtterance();
   message.lang = "pt-PT";
   message.pitch = 1; // From 0 to 2
@@ -30,7 +33,6 @@ export const useAudioPlayback = () => {
     timeout && clearTimeout(timeout);
     return void 0;
   };
-
   const handleMouseDown = (text: string | null) => {
     if (!text) {
       return;
@@ -51,25 +53,18 @@ export const useAudioPlayback = () => {
     onMouseDown?: () => void | null;
     text?: string | null;
   } = {}) => {
+    if (checkIsMobile()) {
+      return {
+        onTouchStart: callFnsInSequence(onMouseDown, () =>
+          handleMouseDown(text),
+        ),
+        ...props,
+      };
+    }
+
     return {
       onMouseDown: callFnsInSequence(onMouseDown, () => handleMouseDown(text)),
 
-      ...props,
-    };
-  };
-
-  const getOnTouchStartProps = ({
-    onTouchStart,
-    text = null,
-    ...props
-  }: {
-    onTouchStart?: () => void | null;
-    text?: string | null;
-  } = {}) => {
-    return {
-      onTouchStart: callFnsInSequence(onTouchStart, () =>
-        handleMouseDown(text),
-      ),
       ...props,
     };
   };
@@ -93,6 +88,12 @@ export const useAudioPlayback = () => {
     onClick?: () => void | null;
     text?: string | null;
   } = {}) => {
+    if (checkIsMobile()) {
+      return {
+        onTouchEnd: callFnsInSequence(onClick, () => handleMouseDown(text)),
+        ...props,
+      };
+    }
     return {onClick: callFnsInSequence(onClick, () => handleClick(text))};
   };
 
@@ -100,7 +101,6 @@ export const useAudioPlayback = () => {
     message,
     onMouseDown: handleMouseDown,
     getOnMouseDownProps,
-    getOnTouchStartProps,
     onClick: handleClick,
     getOnClickProps,
   };

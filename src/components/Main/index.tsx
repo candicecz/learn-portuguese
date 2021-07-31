@@ -7,6 +7,7 @@ import VolumeControl from "src/components/VolumeControl";
 import DifficultyControl from "src/components/DifficultyControl";
 import {Box, Loading} from "src/components/global";
 import {useOptions} from "src/hooks/useOptions";
+import {checkIsMobile} from "src/utils/helpers";
 import Instructions from "../Instructions";
 
 interface MainProps extends StyledMainProps {
@@ -58,6 +59,8 @@ const Main: React.FC<MainProps> = ({
                 }}
               />
             </StyledControls>
+            <h1>{`${checkIsMobile()}`}</h1>
+
             <Quiz
               isMuted={isMuted}
               options={options}
