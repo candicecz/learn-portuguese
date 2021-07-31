@@ -15,7 +15,7 @@ const MainWord: React.FC<MainWordProps> = ({
 }) => {
   return (
     <StyledMainWord>
-      <StyledHeading>
+      <StyledHeading mt={[2, 4]}>
         {children}
         {isInPortuguese && (
           <StyledLine opacity={isMuted ? 0.25 : 0.8}></StyledLine>

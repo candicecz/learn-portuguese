@@ -52,7 +52,7 @@ const Instructions = () => {
               <Image layout={"fill"} src={portugal} alt="Portugal flag." />
             </Box>
           </StyledIconWrapper>
-          <Heading variant={["md"]} my={2} textAlign={"center"}>
+          <Heading variant={["sm", "md"]} my={2} textAlign={"center"}>
             Become a Portuguese mestra(e).
           </Heading>
         </Box>
@@ -73,9 +73,6 @@ const Instructions = () => {
             </Heading>
           </Box>
           <Box flexDirection={"column"} alignItems={"flex-start"}>
-            <Heading variant={"sm"} m={0}>
-              Tips:
-            </Heading>
             <Heading variant={"md"} m={0}>
               <BsFillVolumeUpFill />
             </Heading>
@@ -93,7 +90,9 @@ const Instructions = () => {
             </Heading>
           </Box>
 
-          <Heading variant={"xs"}>Boa sorte!</Heading>
+          <Heading variant={"xs"} my={[1, 2]}>
+            Boa sorte!
+          </Heading>
         </StyledTextBox>
       </StyledInstructions>
     </StyledInstructionsWrapper>

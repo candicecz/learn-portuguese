@@ -27,9 +27,7 @@ StyledMultipleChoice.defaultProps = {
   flex: [1, "unset"],
 };
 
-export const StyledMainWord = styled(Box)(props => {
-  return {};
-});
+export const StyledMainWord = styled(Box)``;
 
 StyledMainWord.defaultProps = {
   flexDirection: "column",

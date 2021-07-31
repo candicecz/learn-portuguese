@@ -14,8 +14,6 @@ interface MainProps extends StyledMainProps {
   toggleHardMode: () => void;
 }
 
-const answer = {rank: 1, portuguese: "não", english: "not"};
-
 const Main: React.FC<MainProps> = ({
   children,
   data,

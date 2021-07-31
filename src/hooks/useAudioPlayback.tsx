@@ -12,6 +12,10 @@ export const useAudioPlayback = () => {
   message.pitch = 1; // From 0 to 2
   message.rate = 1;
   message.volume = 1;
+  message.voice =
+    window.speechSynthesis
+      .getVoices()
+      .find(voice => /pt(-|_)PT/.test(voice.lang)) || null;
 
   let playSlowly = false;
 
