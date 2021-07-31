@@ -90,7 +90,7 @@ export const useAudioPlayback = () => {
   } = {}) => {
     if (checkIsMobile()) {
       return {
-        onTouchEnd: callFnsInSequence(onClick, () => handleMouseDown(text)),
+        onTouchEnd: callFnsInSequence(onClick, () => handleClick(text)),
         ...props,
       };
     }
