@@ -59,8 +59,6 @@ const Main: React.FC<MainProps> = ({
                 }}
               />
             </StyledControls>
-            <h1>{`${checkIsMobile()}`}</h1>
-
             <Quiz
               isMuted={isMuted}
               options={options}
