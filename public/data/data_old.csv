@@ -92,7 +92,7 @@ Rank,Portuguese,English
 91,assim,so
 92,estão,they are
 93,casa,home
-94,lo,it
+94,lo,lo
 95,até,until
 96,disse,said
 97,quer,would you like
@@ -124,14 +124,14 @@ Rank,Portuguese,English
 123,depois,later
 124,vida,life
 125,mãe,mom
-126,por aí,around
+126,oh,oh
 127,nem,nor
-128,senhor,sir
+128,senhor,Mr
 129,estamos,we are
 130,anos,years old
 131,olá,Hello
 132,talvez,maybe
-133,pipa,Kite
+133,sr,sir
 134,homem,men
 135,sem,without
 136,sabes,you know
@@ -360,7 +360,7 @@ Rank,Portuguese,English
 359,durante,during
 360,quarto,bedroom
 361,conta,account
-362,senhora,mrs.
+362,senhora,Mrs
 363,morte,death
 364,tive,had
 365,neste,in this
@@ -499,7 +499,7 @@ Rank,Portuguese,English
 498,trás,back
 499,esperar,wait
 500,contar,tell
-501,aceita,accepted
+501,john,John
 502,buscar,search
 503,paz,peace
 504,procura,demand
@@ -570,7 +570,7 @@ Rank,Portuguese,English
 569,fogo,fire
 570,próprio,own
 571,atenção,attention
-572,bem ali,over there
+572,jesus,Jesus
 573,chegou,it arrived
 574,quiser,he wants
 575,forte,strong
@@ -624,7 +624,7 @@ Rank,Portuguese,English
 623,esteja,is
 624,esposa,wife
 625,natal,Christmas
-626,escritor,writer
+626,mr,mr
 627,continuar,Continue
 628,quis,wanted
 629,veja,Look
@@ -683,7 +683,7 @@ Rank,Portuguese,English
 682,esteve,was
 683,livre,free
 684,hospital,hospital
-685,teste,test
+685,michael,Michael
 686,prisão,prison
 687,viagem,trip
 688,doutor,doctor
@@ -733,7 +733,7 @@ Rank,Portuguese,English
 732,própria,own
 733,dessa,of that
 734,bebé,baby
-735,como você está,how are you
+735,george,george
 736,connosco,with us
 737,linha,line
 738,deves,must
@@ -742,12 +742,12 @@ Rank,Portuguese,English
 741,encontro,meeting
 742,vista,View
 743,saia,get out
-744,banheiro,bathroom
+744,charlie,Charlie
 745,questão,question
 746,gostas,like
 747,precisar,to need
 748,achei,I found
-749,Onde é,where is
+749,david,David
 750,sinal,signal
 751,desse,of that
 752,deixou,he left
@@ -792,7 +792,7 @@ Rank,Portuguese,English
 791,gajo,dude
 792,amiga,friend
 793,notícias,News
-794,miúda,girl
+794,miúda,miúde
 795,quiseres,want
 796,interessa,interest
 797,doente,sick
@@ -802,7 +802,7 @@ Rank,Portuguese,English
 801,estúpido,Stupid
 802,estiver,you are
 803,melhores,best
-804,eu,i
+804,i,I
 805,bons,Good
 806,daí,so
 807,faria,would make
@@ -901,7 +901,7 @@ Rank,Portuguese,English
 900,esperem,wait
 901,missão,mission
 902,diabos,hell
-903,mercado,market
+903,s,s
 904,pensava,thought
 905,ouça,listen
 906,pés,foot
@@ -962,7 +962,7 @@ Rank,Portuguese,English
 961,morta,dead
 962,paul,paul
 963,erro,error
-964,ferir,hurt
+964,d,d
 965,namorada,girlfriend
 966,começa,begins
 967,américa,America
@@ -993,7 +993,7 @@ Rank,Portuguese,English
 992,aprender,learn
 993,dizendo,saying
 994,prova,proof
-995,conter,to contain
+995,harry,harry
 996,soube,knot
 997,ouviu,he heard
 998,negócios,Business
@@ -1034,9 +1034,9 @@ Rank,Portuguese,English
 1033,cerveja,beer
 1034,precisam,need
 1035,divertido,funny
-1036,programador,programmer
+1036,m,m
 1037,naquela,at that
-1038,não sei,I don't know
+1038,uh,uh
 1039,basta,enough
 1040,ouviste,you hear
 1041,reunião,meeting
@@ -1054,7 +1054,7 @@ Rank,Portuguese,English
 1053,entender,understand
 1054,prometo,promise
 1055,passada,last
-1056,natação,swimming
+1056,jimmy,jimmy
 1057,aniversário,birthday
 1058,pudesse,could
 1059,exemplo,example
@@ -1069,7 +1069,7 @@ Rank,Portuguese,English
 1068,sejas,be
 1069,prontos,ready
 1070,tentei,I Tried
-1071,aluguel,rent
+1071,mary,Mary
 1072,serão,be
 1073,explicar,explain
 1074,americano,American
@@ -1078,7 +1078,7 @@ Rank,Portuguese,English
 1077,meia,half
 1078,totalmente,totally
 1079,delas,from them
-1080,ler,to read
+1080,l,lees
 1081,receber,receive
 1082,perigo,danger
 1083,saúde,health
@@ -1116,10 +1116,10 @@ Rank,Portuguese,English
 1115,perceber,to perceive
 1116,humano,human
 1117,esquecer,to forget
-1118,farmacia,drugstore
+1118,bob,bob
 1119,quais,which
 1120,irei,I will go
-1121,prancha de surfe,surf board
+1121,james,james
 1122,terrível,terrible
 1123,mamãe,Mommy
 1124,duro,hard
@@ -1129,8 +1129,8 @@ Rank,Portuguese,English
 1128,vender,sell
 1129,ama,love
 1130,público,public
-1131,não obrigado,no thank you
-1132,permitido,allowed
+1131,henry,henry
+1132,b,B
 1133,ás,to the
 1134,nave,ship
 1135,sonhos,dreams
@@ -1139,7 +1139,7 @@ Rank,Portuguese,English
 1138,provas,evidences
 1139,entendido,understood
 1140,tribunal,court
-1141,quanto tempo,how much time
+1141,billy,Billy
 1142,monte,hill
 1143,meninas,girls
 1144,área,area
@@ -1148,14 +1148,14 @@ Rank,Portuguese,English
 1147,farei,do
 1148,perigoso,dangerous
 1149,experiência,experience
-1150,recibo,receipt
+1150,bill,bill
 1151,acima,above
 1152,percebo,perceive
 1153,existem,exist
 1154,pernas,legs
 1155,lua,moon
 1156,graça,grace
-1157,lento,slow
+1157,c,ç
 1158,acaso,chance
 1159,peça,piece
 1160,estaria,would be
@@ -1168,7 +1168,7 @@ Rank,Portuguese,English
 1167,silêncio,silence
 1168,humanos,humans
 1169,seguinte,Following
-1170,deixando,leave
+1170,caralho,O
 1171,subir,ride up
 1172,devagar,slowly
 1173,espécie,species
@@ -1183,7 +1183,7 @@ Rank,Portuguese,English
 1182,avô,grandfather
 1183,cérebro,brain
 1184,televisão,TV
-1185,surfando,surfing
+1185,johnny,johnny
 1186,propósito,purpose
 1187,resolver,solve
 1188,últimos,latter
@@ -1264,7 +1264,7 @@ Rank,Portuguese,English
 1263,teste,test
 1264,preço,price
 1265,roubar,steal
-1266,em vez de,rather than
+1266,r,rather
 1267,braço,arm
 1268,fotos,Photos
 1269,inteiro,all
@@ -1283,7 +1283,7 @@ Rank,Portuguese,English
 1282,necessário,required
 1283,justo,fair
 1284,confiar,trust
-1285,vomitar,to vomit
+1285,nick,nick
 1286,façam,make
 1287,coragem,courage
 1288,controle,control
@@ -1304,7 +1304,7 @@ Rank,Portuguese,English
 1303,saiba,learn
 1304,voar,fly
 1305,nível,level
-1306,para,to
+1306,to,to
 1307,desses,such
 1308,lixo,garbage
 1309,tentou,tried
@@ -1369,12 +1369,12 @@ Rank,Portuguese,English
 1368,vossas,your
 1369,estiveste,stifed
 1370,dentes,teeth
-1371,pássaro,Bird
+1371,t,t
 1372,contacto,contact
 1373,viram,see
 1374,ideias,ideas
 1375,espectáculo,spectacle
-1376,perdido,lost
+1376,yeah,yeah
 1377,novas,new
 1378,provar,to test
 1379,nariz,nose
@@ -1389,7 +1389,7 @@ Rank,Portuguese,English
 1388,vens,ven
 1389,cliente,client
 1390,ocupado,occupied
-1391,a pé,on foot
+1391,iorque,york
 1392,jovens,young people
 1393,começo,start
 1394,estação,station
@@ -1415,7 +1415,7 @@ Rank,Portuguese,English
 1414,branca,White
 1415,escute,Listen
 1416,monstro,monster
-1417,velejar,sail
+1417,bobby,bobby
 1418,época,era
 1419,brilhante,bright
 1420,ficará,stay
@@ -1436,13 +1436,13 @@ Rank,Portuguese,English
 1435,batalha,battle
 1436,continue,continues
 1437,pegue,take it
-1438,autobus,autobus
+1438,jake,Jake
 1439,esperava,expected
 1440,serve,it suits
 1441,rico,rich
-1442,feliz ,happy
+1442,charles,Charles
 1443,dado,given away
-1444,futebol,football
+1444,maria,Mary
 1445,eua,USA
 1446,verdadeira,true
 1447,cheguei,I arrived
@@ -1463,7 +1463,7 @@ Rank,Portuguese,English
 1462,forças,forces
 1463,santo,Holy
 1464,canção,song
-1465,por favor,please
+1465,io,io
 1466,calças,pants
 1467,cabra,goat
 1468,pensam,think
@@ -1476,7 +1476,7 @@ Rank,Portuguese,English
 1475,velhos,old
 1476,barulho,noise
 1477,flores,flowers
-1478,e,and
+1478,ê,and
 1479,steve,steve
 1480,detective,detective
 1481,visita,visit
@@ -1491,7 +1491,7 @@ Rank,Portuguese,English
 1490,jamais,never
 1491,tornar,become
 1492,longa,long
-1493,dois,two
+1493,sir,sir
 1494,milhares,thousands
 1495,cavalheiros,gentleman
 1496,absolutamente,absolutely
@@ -1500,12 +1500,12 @@ Rank,Portuguese,English
 1499,gostam,like
 1500,vimos,saw
 1501,destruir,to destroy
-1502,ido,gone
+1502,tommy,tommy
 1503,beijo,kiss
 1504,risco,risk
 1505,preparado,prepared
 1506,seres,beings
-1507,há,there is
+1507,ha,there is
 1508,comum,common
 1509,computador,computer
 1510,cavalos,horses
@@ -1516,7 +1516,7 @@ Rank,Portuguese,English
 1515,responsável,responsible
 1516,vinte,twenty
 1517,jornal,newspaper
-1518,trancar,to lock
+1518,li,li
 1519,descer,come down
 1520,esperto,clever
 1521,esconder,hide
@@ -1534,7 +1534,7 @@ Rank,Portuguese,English
 1533,ajude,help
 1534,cortar,cut
 1535,escolher,choose
-1536,inseto,insect
+1536,richard,Richard
 1537,eie,eie
 1538,maldição,curse
 1539,vieram,came
@@ -1554,7 +1554,7 @@ Rank,Portuguese,English
 1553,toque,Touch
 1554,discutir,to discuss
 1555,juiz,judge
-1556,mordida,bite
+1556,ias,ias
 1557,pressão,pressure
 1558,informações,information
 1559,especialmente,especially
@@ -1569,14 +1569,14 @@ Rank,Portuguese,English
 1568,milhão,million
 1569,duma,of
 1570,pescoço,neck
-1571,incluir,include
-1572,de,of
+1571,eh,Eh
+1572,tony,tony
 1573,mandou,sent
 1574,imagem,Image
 1575,conhecemos,We know
 1576,memória,memory
 1577,ponte,bridge
-1578,camarão,shrimp
+1578,p,for
 1579,máximo,maximum
 1580,meninos,boys
 1581,futebol,football
@@ -1587,7 +1587,7 @@ Rank,Portuguese,English
 1586,agradável,nice
 1587,porreiro,plain
 1588,manda,he sends
-1589,oceano,Ocean
+1589,j,J
 1590,ligação,Link
 1591,tchau,Goodbye
 1592,oeste,West
@@ -1602,7 +1602,7 @@ Rank,Portuguese,English
 1601,sociedade,society
 1602,calor,heat
 1603,falas,speech
-1604,consertar,to repair
+1604,jerry,jerry
 1605,confiança,trust
 1606,major,major
 1607,noiva,fiancee
@@ -1614,7 +1614,7 @@ Rank,Portuguese,English
 1613,nacional,national
 1614,ridículo,ridiculous
 1615,fotografia,photography
-1616,frutos do mar,Seafood
+1616,washington,Washington
 1617,espada,sword
 1618,felizes,happy
 1619,partido,broken
@@ -1627,7 +1627,7 @@ Rank,Portuguese,English
 1626,tido,had
 1627,meter,meter
 1628,caramba,damn it
-1629,gostoso,yummy
+1629,gay,gay
 1630,morre,dies
 1631,autocarro,bus
 1632,inglaterra,England
@@ -1641,7 +1641,7 @@ Rank,Portuguese,English
 1640,serem,have
 1641,deviam,should
 1642,trato,tract
-1643,distante,distant
+1643,robert,Robert
 1644,faca,do
 1645,ligou,call
 1646,andando,walking
@@ -1652,7 +1652,7 @@ Rank,Portuguese,English
 1651,calhar,calham
 1652,processo,process
 1653,imenso,immense
-1654,ultraje,outrage
+1654,and,and
 1655,apareceu,he appeared
 1656,sentado,seated
 1657,escuro,dark
@@ -1670,27 +1670,27 @@ Rank,Portuguese,English
 1669,voo,flight
 1670,várias,various
 1671,combate,combat
-1672,grávida,pregnant
-1673,arraia,Manta ray
+1672,lee,lee
+1673,jane,Jane
 1674,conduzir,lead
 1675,gritar,shout out
 1676,deixem,leave
 1677,atirar,shoot
-1678,incêndio,fire
+1678,york,york
 1679,interior,interior
-1680,barato,cheap
+1680,dave,dave
 1681,ficamos,we stay
 1682,andas,andas
 1683,portas,doors
 1684,carreira,career
-1685,diversão,fun
+1685,matt,matt
 1686,perdemos,we lost
 1687,descansar,rest
 1688,leite,milk
 1689,bordo,board
 1690,simpático,kind
 1691,chuva,rain
-1692,ladrao,thief
+1692,walter,walter
 1693,fumar,smoke
 1694,faremos,we will
 1695,visão,vision
@@ -1724,7 +1724,7 @@ Rank,Portuguese,English
 1723,escapar,escape
 1724,entendi,I understood
 1725,bebê,drink
-1726,insetos,insects
+1726,km,km
 1727,vieste,viaste
 1728,conseguiste,managed
 1729,série,series
@@ -1745,7 +1745,7 @@ Rank,Portuguese,English
 1744,teoria,theory
 1745,larga,wide
 1746,laboratório,laboratory
-1747,medusa,jellyfish
+1747,larry,larry
 1748,correcto,correct
 1749,mo,mo
 1750,rapidamente,quickly
@@ -1768,7 +1768,7 @@ Rank,Portuguese,English
 1767,bebe,baby
 1768,confusão,confusion
 1769,terceiro,third
-1770,era,was
+1770,andy,Andy
 1771,busca,search
 1772,lago,lake
 1773,possamos,we can
@@ -1784,19 +1784,19 @@ Rank,Portuguese,English
 1783,estúpida,stupid
 1784,mata,Woods
 1785,andado,walked
-1786,relaxante,relaxing
-1787,miúdas,girls
+1786,chris,Chris
+1787,miúdas,pivot
 1788,passe,pass
 1789,sobreviver,survive
 1790,bala,bullet
-1791,prestes,about
+1791,prestes,fess
 1792,dever,to owe
 1793,excepto,except
 1794,pressa,hurry
 1795,suspeito,suspect
 1796,marca,brand
 1797,poucos,few
-1798,delicioso,delicious
+1798,brian,Brian
 1799,director,director
 1800,acreditas,believe
 1801,controlar,to control
@@ -1881,7 +1881,7 @@ Rank,Portuguese,English
 1880,homicídio,murder
 1881,entendes,understand
 1882,chamam,call
-1883,cheque,check
+1883,will,Will
 1884,instante,instant
 1885,vivos,alive
 1886,madame,ma'am
@@ -1900,13 +1900,13 @@ Rank,Portuguese,English
 1899,ficaria,stay
 1900,ruim,bad
 1901,paga,pay
-1902,barco,boat
+1902,n,n
 1903,próprios,own
 1904,lixar,sand
 1905,interessado,interested
 1906,ouvidos,ear
 1907,fantasma,ghost
-1908,angeles,Angeles
+1908,angeles,angeles
 1909,estudar,studying
 1910,domingo,Sunday
 1911,entrem,come in
@@ -1951,13 +1951,13 @@ Rank,Portuguese,English
 1950,responsabilidade,responsibility
 1951,voltas,turn
 1952,mel,honey
-1953,lula,squid
+1953,carl,carl
 1954,alemães,Germans
 1955,garotas,girl
 1956,pro,pro
 1957,testemunha,witness
 1958,equipe,team
-1959,preocupada,concerned
+1959,simon,simon
 1960,queriam,wanted
 1961,pão,bread
 1962,pequenas,small
@@ -1965,14 +1965,14 @@ Rank,Portuguese,English
 1964,senhorita,miss
 1965,conhecimento,knowledge
 1966,primo,cousin
-1967,cala,shut up
+1967,cala,cala
 1968,new,new
 1969,europa,Europe
 1970,méxico,Mexico
 1971,peito,chest
 1972,fugiu,ran away
 1973,sensação,sensation
-1974,desfrutar,enjoy
+1974,william,William
 1975,poderoso,powerful
 1976,podiam,could
 1977,centenas,hundreds
@@ -1983,7 +1983,7 @@ Rank,Portuguese,English
 1982,farto,tired
 1983,magia,Magic
 1984,malta,Malta
-1985,janela,window
+1985,anna,anna
 1986,agradeço,appreciate
 1987,aberto,open
 1988,vitória,victory

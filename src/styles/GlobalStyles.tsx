@@ -7,6 +7,7 @@ const GlobalStyles = () => {
         html {
           min-width: 250px;
         }
+
         html,
         body {
           height: 100%;
@@ -14,6 +15,7 @@ const GlobalStyles = () => {
             height: 100%;
           }
         }
+
         html,
         body {
           font-size: 18px;

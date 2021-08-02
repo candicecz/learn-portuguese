@@ -125,6 +125,13 @@ export const StyledButton = styled(StyledSystemButton)<StyledButtonProps>`
 
     ${props =>
     props.variant === "solid" &&
+    props.disabled &&
+    css`
+      opacity: 0.5;
+    `}
+
+    ${props =>
+    props.variant === "solid" &&
     !props.disabled &&
     css`
       &:hover {

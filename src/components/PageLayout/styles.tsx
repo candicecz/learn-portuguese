@@ -12,7 +12,6 @@ export const StyledPageLayout = styled(Box)<StyledPageLayoutProps>`
 StyledPageLayout.defaultProps = {
   width: "100%",
   minHeight: "100%",
-  height: ["unset", "100vh"],
   display: "flex",
   flexDirection: "column",
   alignItems: "unset",

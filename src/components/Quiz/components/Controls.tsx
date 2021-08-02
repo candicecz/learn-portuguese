@@ -3,6 +3,7 @@ import {Box, Button, Heading} from "src/components/global";
 import {StyledQuizControls, StyledBanner} from "../styles";
 import {BsArrowRight} from "react-icons/bs";
 import {getRandomNum} from "src/utils/helpers";
+import {useLocalStorage} from "src/hooks/useLocalStorage";
 // import data from "../../public/data/congratulations.json";
 
 interface QuizControlsProps {
