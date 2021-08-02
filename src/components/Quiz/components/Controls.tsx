@@ -3,11 +3,10 @@ import {Box, Button, Heading} from "src/components/global";
 import {StyledQuizControls, StyledBanner} from "../styles";
 import {BsArrowRight} from "react-icons/bs";
 import {getRandomNum} from "src/utils/helpers";
-import {useLocalStorage} from "src/hooks/useLocalStorage";
-// import data from "../../public/data/congratulations.json";
 
 interface QuizControlsProps {
   isAnswerCorrect: boolean;
+  isMuted: boolean;
   isSelectionMade: boolean;
   showAnswer: boolean;
   setShowAnswer: (args: boolean) => void;
@@ -16,13 +15,16 @@ interface QuizControlsProps {
 
 const QuizControls: React.FC<QuizControlsProps> = ({
   isAnswerCorrect,
+  isMuted,
   isSelectionMade,
   showAnswer,
   setShowAnswer,
   resetQuestion,
 }) => {
+  const [audio] = useState(new Audio("bing.mp3"));
   const [data, setData] = useState<string[]>([]);
   const [congrats, setCongrats] = useState<string>("");
+
   useEffect(() => {
     const getData = () =>
       fetch("data/congratulations.json")
@@ -34,6 +36,14 @@ const QuizControls: React.FC<QuizControlsProps> = ({
   useEffect(() => {
     setCongrats(data[getRandomNum(data.length)]);
   }, [isAnswerCorrect, data]);
+
+  useEffect(() => {
+    audio.volume = 0.2;
+    // if the user has selected and entered the correct answer, play a success sound(only if unmuted).
+    if (!isMuted && isAnswerCorrect && showAnswer) {
+      audio.play();
+    }
+  }, [isAnswerCorrect, showAnswer, isMuted, audio]);
 
   return (
     <StyledQuizControls animate={showAnswer && !isAnswerCorrect}>

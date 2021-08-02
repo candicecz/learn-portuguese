@@ -94,6 +94,7 @@ const Quiz: React.FC<QuizProps> = ({
       </StyledMultipleChoice>
       {/* Submit Answer */}
       <QuizControls
+        isMuted={isMuted}
         isSelectionMade={!!selection}
         isAnswerCorrect={isAnswerCorrect(selection!, answer)}
         resetQuestion={() => {

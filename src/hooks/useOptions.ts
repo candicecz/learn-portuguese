@@ -57,7 +57,11 @@ const runOptionsTests = (
   total_length: number,
 ) => {
   // 1. check if item already exists in array
-  if (results.findIndex(l => l.rank === item.rank) >= 0) {
+  if (
+    results.findIndex(
+      l => l.rank === item.rank || l.english === item.english,
+    ) >= 0
+  ) {
     return false;
   }
   // 2. check if array has a good number of hard questions in hard mode
