@@ -37,13 +37,13 @@ const QuizControls: React.FC<QuizControlsProps> = ({
     setCongrats(data[getRandomNum(data.length)]);
   }, [isAnswerCorrect, data]);
 
-  useEffect(() => {
+  const playAudio = () => {
     audio.volume = 0.2;
     // if the user has selected and entered the correct answer, play a success sound(only if unmuted).
-    if (!isMuted && isAnswerCorrect && showAnswer) {
+    if (!isMuted && isAnswerCorrect && !showAnswer) {
       audio.play();
     }
-  }, [isAnswerCorrect, showAnswer, isMuted, audio]);
+  };
 
   return (
     <StyledQuizControls animate={showAnswer && !isAnswerCorrect}>
@@ -51,7 +51,10 @@ const QuizControls: React.FC<QuizControlsProps> = ({
         variant={"solid"}
         disabled={!isSelectionMade}
         isSelected={showAnswer}
-        onClick={() => (!showAnswer ? setShowAnswer(true) : resetQuestion())}
+        onClick={() => {
+          !showAnswer ? setShowAnswer(true) : resetQuestion();
+          playAudio();
+        }}
       >
         <Box width={"100%"} justifyContent={"center"} position={"relative"}>
           <Heading color={"inherit"}>
